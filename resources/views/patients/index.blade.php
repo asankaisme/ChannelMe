@@ -12,8 +12,8 @@
                     Manage Patient List
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <table class="table table-sm table-striped table-hover">
+                    <div class="col">
+                        <table  id="myTable" class="table table-sm table-striped table-hover">
                             <thead>
                                 <tr>
                                     <td>First Name</td>
@@ -29,7 +29,7 @@
                                         <td>{{ $patient->lname }}</td>
                                         <td>{{ $patient->city }}</td>
                                         <td>
-                                            <a href="{{ route('patients.show', $patient->id) }}">Details</a>
+                                            <a href="{{ route('patients.show', $patient->id) }}"><img src="{{ asset('svgs/user-yellow-circle-20550.svg') }}" alt="imageOfMan" srcset="" height="25px" width="25px"></a>
                                             <a href="{{ route('patients.show', $patient->id) }}">Edit</a>
                                             <a href="{{ route('patients.show', $patient->id) }}">Delete</a>
                                             <a href="{{ route('patients.show', $patient->id) }}">New Diagnosis</a>
@@ -44,4 +44,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    } );
+</script>
+
 @endsection
