@@ -16,10 +16,11 @@
                         <table  id="myTable" class="table table-sm table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <td>First Name</td>
-                                    <td>Last Name</td>
-                                    <td>City</td>
-                                    <td></td>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>City</th>
+                                    <th>Blood Group</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -28,11 +29,12 @@
                                         <td>{{ $patient->fname }}</td>
                                         <td>{{ $patient->lname }}</td>
                                         <td>{{ $patient->city }}</td>
+                                        <td>{{ $patient->bloodGroup }}</td>
                                         <td>
-                                            <a href="{{ route('patients.show', $patient->id) }}"><img src="{{ asset('svgs/user-yellow-circle-20550.svg') }}" alt="imageOfMan" srcset="" height="25px" width="25px"></a>
-                                            <a href="{{ route('patients.show', $patient->id) }}">Edit</a>
-                                            <a href="{{ route('patients.show', $patient->id) }}">Delete</a>
-                                            <a href="{{ route('patients.show', $patient->id) }}">New Diagnosis</a>
+                                            <a href="{{ route('patients.show', $patient->id) }}" title="Patient Details"><img src="{{ asset('svgs/user-yellow-circle-20550.svg') }}" alt="imageOfMan" srcset="" height="25px" width="25px"></a>
+                                            {{-- <a href="{{ route('patients.show', $patient->id) }}"><img src="{{ asset('svgs/pencil-writing-blue-circle-20625.svg') }}" alt="pencil.svg" height="25px" width="25px"></a> --}}
+                                            {{-- <a href="{{ route('patients.show', $patient->id) }}"><img src="{{ asset('svgs/trash-bin-red-circle-button-20567.svg') }}" alt="" height="25px" width="25px" srcset=""></a> --}}
+                                            <a href="{{ route('patients.show', $patient->id) }}" title="Add a diagnosis"><img src="{{ asset('svgs/web-page-menu-button-blue-circle-20566.svg') }}" alt="" height="25px" width="25px"></a>
                                         </td>
                                     </tr>
                                 @endforeach
