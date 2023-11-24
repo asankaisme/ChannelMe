@@ -17,10 +17,12 @@ return new class extends Migration
             $table->string('fname')->nullable();
             $table->string('lname')->nullable();
             $table->date('birthday')->nullable();
+            $table->integer('gender')->nullable();
             $table->string('add1')->nullable();
             $table->string('add2')->nullable();
             $table->string('city')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('email')->nullable();
             $table->string('contactPerson')->nullable();
             $table->string('contMobile')->nullable();
             $table->string('bloodGroup')->nullable();

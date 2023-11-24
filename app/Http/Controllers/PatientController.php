@@ -39,9 +39,7 @@ class PatientController extends Controller
     public function show(string $id)
     {
         $patient = Patient::where('id', $id)->first();
-
-        
-        dd($patient->fname);
+        return view('patients.show', compact('patient'));
     }
 
     /**

@@ -23,15 +23,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        // User::factory()->create([
-        //     'name' => 'Asanka',
-        //     'email' => 'asankaisme@gmail.com',
-        //     'password' => Hash::make('asanka123'),
-        // ]);
+        User::factory()->create([
+            'name' => 'Asanka',
+            'email' => 'asankaisme@gmail.com',
+            'password' => Hash::make('asanka123'),
+        ]);
 
-        // User::factory(5)->create();
+        User::factory(5)->create();
 
-        //Patient::factory(10)->create();
+        Patient::factory(10)->create();
 
         //Drug::factory(20)->create();
         
