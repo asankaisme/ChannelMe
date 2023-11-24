@@ -10,6 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     Manage Patient List
+                    <span style="float: right;"><a href="{{ route('patients.create') }}" title="Add a new patient"><img src="{{ asset('svgs/add-circle-svgrepo-com.svg') }}" alt="" height="40px" width="auto"></a></span>
                 </div>
                 <div class="card-body">
                     <div class="col">
