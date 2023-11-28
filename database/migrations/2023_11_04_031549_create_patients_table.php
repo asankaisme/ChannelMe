@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('fname')->nullable();
             $table->string('lname')->nullable();
             $table->date('birthday')->nullable();
+            $table->integer('age')->nullable();
             $table->integer('gender')->nullable();
             $table->string('add1')->nullable();
             $table->string('add2')->nullable();
@@ -27,6 +28,16 @@ return new class extends Migration
             $table->string('contMobile')->nullable();
             $table->string('bloodGroup')->nullable();
             $table->integer('isActive')->default(1);
+        });
+
+        Schema::table('patients', function (Blueprint $table){
+            $table->string('fname', 100)->change();
+        });
+        Schema::table('patients', function (Blueprint $table){
+            $table->string('lname', 100)->change();
+        });
+        Schema::table('patients', function (Blueprint $table){
+            $table->string('contactPerson', 100)->change();
         });
     }
 

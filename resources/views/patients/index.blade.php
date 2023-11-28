@@ -40,6 +40,7 @@
                                                 @endif
                                             </a>
                                             <a href="{{ route('patients.show', $patient->id) }}" title="Add a diagnosis"><img src="{{ asset('svgs/web-page-menu-button-blue-circle-20566.svg') }}" alt="" height="25px" width="25px"></a>
+                                            <a href="" title="Show Old Records"><img src="{{ asset('svgs/diagnosis-svgrepo-com.svg') }}" alt="diagnosisReport" height="25px" width="25px"></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -47,6 +48,16 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            <div class="col">
+                @if (session()->flash('isSuccess'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session()->flash('isSuccess') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
             </div>
         </div>
     </div>

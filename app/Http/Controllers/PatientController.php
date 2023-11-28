@@ -21,7 +21,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        return view('patients.create');
     }
 
     /**
@@ -29,8 +29,13 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
+        $request->validate([
+            'fname' => ['required', 'max:100', 'min:2'],
+            'lname' => ['required', 'max:100', 'min:2'],
+        ]);
+        $newPatient = Patient::create($request->input());
+        return redirect()->route('patients.index')->session()->flash('isSuccess', 'New patient record added succefully.');
+
     }
 
     /**
