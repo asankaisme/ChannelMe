@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\DrugController;
 use App\Http\Controllers\PatientController;
 use App\Models\Patient;
@@ -29,6 +30,13 @@ Route::middleware('auth')->group(function() {
         'patients' => PatientController::class,
         'drug' => DrugController::class,
     ]);
+
+    Route::get('/diagnosis/{patientId}', [DiagnosisController::class, 'addDiagnosis'])->name('diagnosis');
+    Route::post('/diagnosis/{patientId}', [DiagnosisController::class, 'saveDiagnosisReport'])->name('diagnosis');
+
+    Route::get('/issueDrug/{patientId}', function($patientId){
+        return view('issueDrugs.issuePage', compact('patientId'));
+    })->name('issueDrugs');
 });
 
 

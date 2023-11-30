@@ -13,28 +13,31 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <table class="table table-sm table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <td>Drug Name</td>
-                                    <td>Available Quantity</td>
-                                    <td>Re-order Quantity</td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($drugs as $drug)
+                        <div class="col">
+                            <table class="table table-sm table-striped table-hover" id="myTable">
+                                <thead>
                                     <tr>
-                                        <td>{{ $drug->drugName }}</td>
-                                        <td>{{ $drug->quantity }}</td>
-                                        <td>{{ $drug->rol }}</td>
-                                        <td>
-                                            
-                                        </td>
+                                        <td>Drug Name</td>
+                                        <td>Available Quantity</td>
+                                        <td>Re-order Quantity</td>
+                                        <td></td>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($drugs as $drug)
+                                        <tr>
+                                            <td>{{ $drug->drugName }}</td>
+                                            <td>{{ $drug->quantity }}</td>
+                                            <td>{{ $drug->rol }}</td>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

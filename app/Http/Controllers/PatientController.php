@@ -34,8 +34,13 @@ class PatientController extends Controller
             'lname' => ['required', 'max:100', 'min:2'],
         ]);
         $newPatient = Patient::create($request->input());
-        return redirect()->route('patients.index')->session()->flash('isSuccess', 'New patient record added succefully.');
-
+        //dd($newPatient);
+        if ($newPatient != null)
+            return redirect()->route('patients.show', $newPatient->id)->with('isSuccess', 'New patient record added succefully.');
+            //dd($newPatient->id);
+        else {
+            return redirect()->route('patients.index')->with('isFailed', 'Failed to add details!');
+        }
     }
 
     /**

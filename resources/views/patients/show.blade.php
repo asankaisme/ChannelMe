@@ -7,6 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         Personal Information of <span style="color:rgb(2, 71, 2); font-weight:bold;">{{ $patient->fname }} {{ $patient->lname }}</span>
+                        <span style="float: right; color:rgb(2, 72, 2); font-weight:bold;">#{{ $patient->id }}</span>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -104,13 +105,14 @@
                                 <span style="float: right;">
                                     <a href="{{ route('patients.index') }}"><button type="button" class="btn btn-outline-dark btn-sm">Back</button></a>
                                     <a href="{{ route('patients.edit',  $patient->id) }}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                                    <a href="#"><button type="button" class="btn btn-success btn-sm">New Diagnosis</button></a>
+                                    <a href="{{ route('diagnosis', $patient->id) }}"><button type="button" class="btn btn-success btn-sm">New Diagnosis</button></a>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @include('shared.messages')
         </div>
     </div>
 @endsection

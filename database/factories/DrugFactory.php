@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Psy\Util\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +18,9 @@ class DrugFactory extends Factory
     public function definition(): array
     {
         return [
-            'drugName' =>fake()->safeColorName(),
-            'quantity' =>fake()->numberBetween(10, 150),
-            'rol' => fake()->numberBetween(5,10),
+            'drugName' =>fake()->userName(),
+            'quantity' =>fake()->numberBetween(70, 150),
+            'rol' => fake()->numberBetween(5,30),
             'isActive' => 1,
         ];
     }

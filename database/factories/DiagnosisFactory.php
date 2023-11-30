@@ -17,7 +17,8 @@ class DiagnosisFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'patient_id' => fake()->numberBetween(1, 10),
+            'dgReport' => fake()->paragraph(),
         ];
     }
 }

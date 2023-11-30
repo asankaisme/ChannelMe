@@ -57,7 +57,7 @@
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label for="age">Age(Yrs)</label>
-                                        <input type="text" class="form-control form-control-sm" name="age">
+                                        <input type="number" class="form-control form-control-sm" name="age"  min="0" max="110">
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -91,7 +91,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="mobile">Mobile Number</label>
-                                        <input type="text" class="form-control form-control-sm" name="mobile">
+                                        <input type="tel" class="form-control form-control-sm" name="mobile" >
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -113,7 +113,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group" style="color:rgb(68, 121, 235);">
                                         <label for="contMobile">Contact Number</label>
-                                        <input type="text" class="form-control form-control-sm" name="contMobile">
+                                        <input type="tel" class="form-control form-control-sm" name="contMobile" >
                                     </div>
                                 </div>
                             </div>
@@ -122,6 +122,7 @@
                                     <span style="float: right;">
                                         <a href="{{ route('patients.index') }}"><button type="button"
                                                 class="btn btn-outline-dark btn-sm">Back</button></a>
+                                                <input type="reset" value="Reset" class="btn btn-outline-info btn-sm">
                                         <input type="submit" value="Add Record" class="btn btn-primary btn-sm">
                                     </span>
                                 </div>
