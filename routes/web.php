@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function() {
         'patients' => PatientController::class,
         'drug' => DrugController::class,
     ]);
+    
+    Route::get('/patients/reportHistory/{id}', [DiagnosisController::class, 'viewHistory'])->name('viewHistory');
 
     Route::get('/diagnosis/{patientId}', [DiagnosisController::class, 'addDiagnosis'])->name('diagnosis');
     Route::post('/diagnosis/{patientId}', [DiagnosisController::class, 'saveDiagnosisReport'])->name('diagnosis');

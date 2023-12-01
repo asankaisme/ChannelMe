@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-grid.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-reboot.min.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap4.min.css">
+    @livewireStyles
     <title>ChannelMe</title>
 </head>
 
@@ -77,6 +78,7 @@
     <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap4.min.js"></script>
     <script src="{{ asset('loginTemplate/js/popper.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>

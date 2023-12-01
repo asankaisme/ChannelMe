@@ -3,9 +3,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                {{ $patientId }}
+                @livewire('IssueDrugs', ['patientId' => $patientId])
             </div>
-            
         </div>
         @include('shared.messages')
     </div>

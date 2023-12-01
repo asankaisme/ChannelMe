@@ -28,4 +28,15 @@ class DiagnosisController extends Controller
             return redirect()->route('patients.index')->with('isFailed', 'Failed to add details!');
         }
     }
+
+    public function viewHistory($patientId){
+        if ($patientId != null) {
+            $patient = Patient::where('id', $patientId)->first();
+            $reportHistory = $patient->diagnosis;
+            return view('patients.reportHistory', compact('patient','reportHistory'));   
+        } else {
+            return redirect()->route('patients.index');
+        }
+        
+    }
 }
