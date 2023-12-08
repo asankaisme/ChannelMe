@@ -15,7 +15,8 @@ class Prescription extends Model
         'drug_id',
         'diagnosis_id',
         'qtyIssued',
-        'numberOfTimes',
+        'remarks', //issue pattern
+        'status', //start_issuing, issued, completed are the statuses in this table
     ];
 
     public function diagnosis(){

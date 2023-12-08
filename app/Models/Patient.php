@@ -30,4 +30,8 @@ class Patient extends Model
     public function diagnosis(){
         return $this->hasMany(Diagnosis::class);
     }
+
+    public function latestDiagnosis(){
+        return $this->hasOne(Diagnosis::class)->latest();
+    }
 }

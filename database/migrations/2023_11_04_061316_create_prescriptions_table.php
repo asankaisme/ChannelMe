@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('diagnosis_id')->nullable()->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->foreignId('drug_id')->nullable()->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->integer('qtyIssued')->nullable();
-            $table->string('numberOfTimes')->nullable();
+            $table->string('remarks')->nullable();
+            $table->string('status')->nullable();
         });
     }
 
