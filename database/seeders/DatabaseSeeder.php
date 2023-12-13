@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Asanka',
@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
 
         User::factory(5)->create();
 
-        Patient::factory(10)->create();
+        Patient::factory(25)->create();
 
-        Diagnosis::factory(10)->create();
+        Diagnosis::factory(20)->create();
 
-        Drug::factory(20)->create();
+        Drug::factory(45)->create();
         
     }
 }

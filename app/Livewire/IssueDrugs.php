@@ -27,6 +27,7 @@ class IssueDrugs extends Component
                 $newPrescription->diagnosis_id = $diagnosis_id_new;
                 $newPrescription->qtyIssued = $this->qtyIssued;
                 $newPrescription->remarks = $this->remarks;
+                $newPrescription->status = 'start_issuing';
                 $newPrescription->save();
                 // update drugs table
                 $updatedDrgs = new Drug();
