@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-md-1">
-                        <input type="submit" value="Add" class="btn btn-sm btn-success" style="margin-top: 30px;">
+                        <input type="submit" value="Add" class="btn btn-sm btn-outline-success" style="margin-top: 30px;">
                     </div>
                 </div>
             </form>
@@ -55,30 +55,37 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <p style="color:rgb(2, 72, 2);">-Medicine to be dispensed-</p>
                     @if ($relatedPrescription->count() != null)
+                    <p style="color:rgb(2, 72, 2);">-Medicine to be dispensed-</p>
                         <table class="tbl tbl-sm table-striped table-hover">
                             <tbody>
                                 <tr style="font-weight: bold; color:rgb(2, 72, 2)">
                                     <td style="width: 200px;">Name</td>
                                     <td style="width: 130px;">Quantity</td>
                                     <td style="width: 100px;">Guide</td>
-                                    <td></td>
+                                    <td style="width: auto;"></td>
                                 </tr>
                                 @foreach ($relatedPrescription as $prescription)
                                     <tr>
-                                        <td style="width: 200px;">{{ $prescription->drug->drugName }}</td>
-                                        <td style="width: 130px;">{{ $prescription->qtyIssued }}</td>
-                                        <td style="width: 75px;">{{ $prescription->remarks }}</td>
-                                        <td></td>
+                                        <td style="width: 210px;">{{ $prescription->drug->drugName }}</td>
+                                        <td style="width: 160px;">{{ $prescription->qtyIssued }}</td>
+                                        <td style="width: 130px;">{{ $prescription->remarks }}</td>
+                                        <td style="width: auto;"></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="row" style="float:right; margin-top:10px;">
+                            <form action="">
+                                <input type="hidden" wire:model="diagnosis_id" value="{{ $latestReports->id }}">
+                                <input type="submit" value="Send to Pharmacy" class="btn btn-sm btn-outline-success">
+                            </form>
+                        </div>
                     @else
                         <p style="text-align:center; color:rgb(2, 72, 2);">No drug issued. Start issuing!</p>
                     @endif
                 </div>
+                
                 <div class="col-md-3"></div>
             </div>
         </div>
