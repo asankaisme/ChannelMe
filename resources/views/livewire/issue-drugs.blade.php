@@ -77,6 +77,7 @@
                         </table>
                         <div class="row" style="float:right; margin-top:10px;">
                             <form action="">
+                                @csrf
                                 <input type="hidden" wire:model="diagnosis_id" value="{{ $latestReports->id }}">
                                 <input type="submit" value="Send to Pharmacy" class="btn btn-sm btn-outline-success">
                             </form>
