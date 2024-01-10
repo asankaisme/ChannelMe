@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('drugName')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('rol')->nullable();
+            $table->integer('unitPrice')->nullable();
             $table->integer('isActive')->nullable();
         });
     }

@@ -21,6 +21,7 @@ class DrugFactory extends Factory
             'drugName' =>fake()->userName(),
             'quantity' =>fake()->numberBetween(70, 150),
             'rol' => fake()->numberBetween(5,30),
+            'unitPrice' => fake()->numberBetween(1,20),
             'isActive' => 1,
         ];
     }
