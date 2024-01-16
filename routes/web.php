@@ -39,6 +39,10 @@ Route::middleware('auth')->group(function() {
     Route::get('/issueDrug/{patientId}', function($patientId){
         return view('issueDrugs.issuePage', compact('patientId'));
     })->name('issueDrugs');
+
+    Route::get('/pharmacy', function(){
+        return view('pharmacy.index');
+    })->name('pharmacy');
 });
 
 

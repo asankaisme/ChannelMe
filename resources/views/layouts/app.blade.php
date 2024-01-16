@@ -45,6 +45,9 @@
                         <a class="nav-link" href="{{ route('drug.index') }}">Drugs Management</a>
                     </li> --}}
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pharmacy') }}">Pharmacy</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Reports</a>
                     </li>
                 </ul>
