@@ -3,6 +3,7 @@
 use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\DrugController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PrescriptionController;
 use App\Models\Patient;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/issueDrug/{patientId}', function($patientId){
         return view('issueDrugs.issuePage', compact('patientId'));
     })->name('issueDrugs');
+
+    Route::get('/prescription/{diagnosis}', [PrescriptionController::class, 'showPrescription'])->name('showPrescriptionForm');
 
     Route::get('/pharmacy', function(){
         return view('pharmacy.index');

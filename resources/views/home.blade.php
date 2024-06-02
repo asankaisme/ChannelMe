@@ -12,7 +12,7 @@
                     Dashboard
                 </div>
                 <div class="card-body">
-                    @livewire('Dashboard')
+                    
                 </div>
             </div>
         </div>

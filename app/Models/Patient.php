@@ -27,11 +27,18 @@ class Patient extends Model
         'isActive',
     ];
 
-    public function diagnosis(){
+    public function diagnosis()
+    {
         return $this->hasMany(Diagnosis::class);
     }
 
-    public function latestDiagnosis(){
+    public function latestDiagnosis()
+    {
         return $this->hasOne(Diagnosis::class)->latest();
+    }
+
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
     }
 }

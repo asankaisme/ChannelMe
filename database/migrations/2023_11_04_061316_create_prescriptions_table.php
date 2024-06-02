@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            // $table->foreignId('patient_id')->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('diagnosis_id')->nullable()->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->foreignId('drug_id')->nullable()->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->integer('qtyIssued')->nullable();
